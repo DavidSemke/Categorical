@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/items_parent_fragment_list_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selected_items_tab"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:text="@string/selected_items_tab_name"
+            android:textSize="18sp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/catalog_tab"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:text="@string/catalog_tab_name"
+            android:textSize="18sp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
+
+
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_items_parent_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@id/items_parent_fragment_list_tabs"
+        app:navGraph="@navigation/items_parent_nav_graph" />
+
+</RelativeLayout>

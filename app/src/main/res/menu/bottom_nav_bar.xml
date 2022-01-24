@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/select_mode_indicator"
+        android:icon="@drawable/ic_select"
+        android:title="Select"
+        android:enabled="true" />
+    <item
+        android:id="@+id/add_mode_indicator"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
+        android:title="Add" />
+    <item
+        android:id="@+id/edit_mode_indicator"
+        android:enabled="true"
+        android:icon="@drawable/ic_edit"
+        android:title="Edit" />
+    <item
+        android:id="@+id/delete_mode_indicator"
+        android:enabled="true"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete" />
+</menu>

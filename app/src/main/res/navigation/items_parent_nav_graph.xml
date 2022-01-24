@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/selected_items">
+
+    <fragment
+        android:id="@+id/selected_items"
+        android:name="com.example.depthdefinedshoppinglist.ui.fragment.SelectedItemsFragment"
+        android:label="selected_items_label"
+        tools:layout="@layout/selected_items_fragment">
+
+        <action
+            android:id="@+id/action_selected_items_to_catalog"
+            app:destination="@id/catalog" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalog"
+        android:name="com.example.depthdefinedshoppinglist.ui.fragment.CatalogFragment"
+        android:label="catalog_label"
+        tools:layout="@layout/catalog_fragment">
+
+        <action
+            android:id="@+id/action_catalog_to_selected_items"
+            app:destination="@id/selected_items" />
+    </fragment>
+</navigation>
