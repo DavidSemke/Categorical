@@ -2,7 +2,6 @@ package com.example.depthdefinedshoppinglist.ui.fragment;
 
 import android.os.Bundle;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,10 +30,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CatalogFragment extends Fragment implements OnItemClickListener {
-
-    //for testing
-    public static final String MODIFY = "modify";
-    public static final String ADD = "add";
     //all ShoppingItem objects have null as parent if parent is root; this is just for the sake of
     //displaying the root as an item
     public static final ShoppingItem CAT_ROOT = new ShoppingItem("CATALOG ROOT");
@@ -421,8 +416,6 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
-
-                    ShoppingItem[] expandedCats = mainViewModel.getExpandedCats();
 
                     ArrayList<ShoppingItem> siblings = null;
 

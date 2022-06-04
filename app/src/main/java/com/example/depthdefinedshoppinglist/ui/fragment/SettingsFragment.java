@@ -38,10 +38,9 @@ public class SettingsFragment extends Fragment {
 
         Button select_file_button = view.findViewById(
                 R.id.settings_file_management_select_file_button);
-        select_file_button.setOnClickListener(v -> {
-                    DialogManager.createCreateTextFileDialog(requireActivity(), fileCreationLauncher,
-                            fileSelectionLauncher);
-                });
+        select_file_button.setOnClickListener(v ->
+                DialogManager.createCreateTextFileDialog(requireActivity(), fileCreationLauncher,
+                fileSelectionLauncher));
     }
 
 }

@@ -1,7 +1,6 @@
 package com.example.depthdefinedshoppinglist.ui.viewModel;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
@@ -20,15 +19,10 @@ import java.util.Stack;
  * Let 'selectedItems' be ShoppingItem objects in the 'selectedItems' array.
  */
 public class MainViewModel extends ViewModel {
-
-    //for testing
-    public static final String EXPANDCOLLAPSE = "expandCollapse";
-    public static final String BASIC_OPS = "basicOps";
-
     private ArrayList<ShoppingItem> catItems = new ArrayList<>();
     private ArrayList<ShoppingItem> selectedItems = new ArrayList<>();
     //index i is the expanded item at depth i (null if no item is expanded at that depth)
-    private ShoppingItem[] expandedCats = new ShoppingItem[ShoppingItem.MAX_DEPTH+1];
+    private final ShoppingItem[] expandedCats = new ShoppingItem[ShoppingItem.MAX_DEPTH+1];
 
     private CatalogRecViewAdapter catAdapter;
 
@@ -107,31 +101,9 @@ public class MainViewModel extends ViewModel {
         }
     }
 
-    //for testing!!!
-    private void reportDataState() {
-        Log.d(BASIC_OPS, "POST ADD/DEL/EDIT");
-        String expanded = "";
-        String mainCats = "";
-        String displayedCats = "";
-        for (ShoppingItem e : expandedCats) {
-            if (e == null)
-                break;
-            expanded += e.getName() + " ";
-        }
-        for (ShoppingItem e : catItems) {
-            mainCats += e.getName() + " ";
-        }
-        for (ShoppingItem e : catAdapter.getDisplayedCatItems()) {
-            displayedCats += e.getName() + " ";
-        }
-        Log.d(BASIC_OPS, "CatItems: " + mainCats);
-        Log.d(BASIC_OPS, "ExpandedCats: " + expanded);
-        Log.d(BASIC_OPS, "DisplayedCatItems: " + displayedCats);
-    }
-
     public void addToCatalog(ShoppingItem itemToAdd, int parentPosition) {
         ShoppingItem parent = catAdapter.getItem(parentPosition);
-        ArrayList<ShoppingItem> children = null;
+        ArrayList<ShoppingItem> children;
 
         if (parent.equals(CatalogFragment.CAT_ROOT))
             children = catItems;
@@ -154,7 +126,6 @@ public class MainViewModel extends ViewModel {
         //add to view
         catAdapter.addToParent(itemToAdd, parentPosition);
 
-        reportDataState();
     }
 
     public void deleteFromCatalog(int posOfItemToDelete) {
@@ -178,10 +149,6 @@ public class MainViewModel extends ViewModel {
         }
 
         catAdapter.delete(posOfItemToDelete, descendantCount);
-
-        Log.d(BASIC_OPS, "POST DEL - descendantCount = " + descendantCount);
-
-        reportDataState();
     }
 
     public void editCatalog(int itemIndex, String newName) {
@@ -197,8 +164,6 @@ public class MainViewModel extends ViewModel {
         Collections.sort(selectedItems);
 
         buildCatalogView();
-
-        reportDataState();
     }
 
     //the following methods manipulate the catalog and what catItems the user sees
@@ -253,18 +218,6 @@ public class MainViewModel extends ViewModel {
         catAdapter.removeRange(position+1, numOfDescendantsToCollapse);
         catAdapter.notifyItemChanged(position);
 
-        Log.d(EXPANDCOLLAPSE, "COLLAPSE START");
-        Log.d(EXPANDCOLLAPSE, "collapsed item " + toCollapse.getName());
-        String expanded = "";
-        for (int i = 0; i < expandedCats.length; i++) {
-            if (expandedCats[i] == null)
-                break;
-            expanded += expandedCats[i].getName() + " ";
-        }
-        Log.d(EXPANDCOLLAPSE, "expandedCats: " + expanded);
-        Log.d(EXPANDCOLLAPSE, "num of descendents hidden: " + numOfDescendantsToCollapse);
-        Log.d(EXPANDCOLLAPSE, "COLLAPSE END");
-
         return numOfDescendantsToCollapse;
     }
 
@@ -276,17 +229,6 @@ public class MainViewModel extends ViewModel {
         ArrayList<ShoppingItem> children = toExpand.getCategoryItems();
         catAdapter.addRange(position+1, children);
         catAdapter.notifyItemChanged(position);
-
-        Log.d(EXPANDCOLLAPSE, "EXPAND START");
-        Log.d(EXPANDCOLLAPSE, "expanded item " + toExpand.getName());
-        String expanded = "";
-        for (int i = 0; i < expandedCats.length; i++) {
-            if (expandedCats[i] == null)
-                break;
-            expanded += expandedCats[i].getName() + " ";
-        }
-        Log.d(EXPANDCOLLAPSE, "expandedCats: " + expanded);
-        Log.d(EXPANDCOLLAPSE, "EXPAND END");
     }
 
     /**
@@ -428,9 +370,5 @@ public class MainViewModel extends ViewModel {
 
     public ShoppingItem[] getExpandedCats() {
         return expandedCats;
-    }
-
-    public void setExpandedCats(ShoppingItem[] expandedCats) {
-        this.expandedCats = expandedCats;
     }
 }

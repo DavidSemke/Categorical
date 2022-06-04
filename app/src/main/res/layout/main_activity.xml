@@ -32,7 +32,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/settings"/>
+                android:contentDescription="@string/settings"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <ImageView
                 android:id="@+id/refresh_icon"
@@ -45,7 +48,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/settings_icon"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/refresh"/>
+                android:contentDescription="@string/refresh"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -19,10 +19,7 @@ import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
 
 public class SelectedItemsFragment extends Fragment implements OnItemClickListener {
 
-    private MainViewModel mainViewModel;
     private SelectedItemsRecViewAdapter selectedItemsRecViewAdapter;
-
-
 
     @Override
     public View onCreateView(
@@ -36,10 +33,11 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mainViewModel =
+        MainViewModel mainViewModel =
                 new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        TextView selectedItemsEmptyRecViewMsg = view.findViewById(R.id.selected_items_empty_rec_view_text);
+        TextView selectedItemsEmptyRecViewMsg =
+                view.findViewById(R.id.selected_items_empty_rec_view_text);
 
         if (mainViewModel.getSelectedItems().isEmpty())
             selectedItemsEmptyRecViewMsg.setVisibility(View.VISIBLE);
@@ -47,11 +45,10 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
         RecyclerView recyclerView = view.findViewById(R.id.selected_items_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        selectedItemsRecViewAdapter = new SelectedItemsRecViewAdapter(mainViewModel.getSelectedItems(),
+        selectedItemsRecViewAdapter =
+                new SelectedItemsRecViewAdapter(mainViewModel.getSelectedItems(),
                 this);
         recyclerView.setAdapter(selectedItemsRecViewAdapter);
-
-
     }
 
     public void onItemClick(int position) {

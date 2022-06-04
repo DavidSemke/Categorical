@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         refreshIcon.setOnClickListener(v -> {
             if (TextFileManager.isExternalModify()) {
+
                 if (mainViewModel.updateLists(this)) {
 
                     mainViewModel.buildCatalogView();
@@ -78,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
                             this, R.string.failed_refresh_msg,
                             Toast.LENGTH_SHORT).show();
                 }
+            }
+            else {
+                Toast.makeText(
+                        this, R.string.refreshed_msg,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }

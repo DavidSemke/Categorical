@@ -15,7 +15,8 @@ import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
 import java.util.List;
 import java.util.Objects;
 
-public class SelectedItemsRecViewAdapter extends RecyclerView.Adapter<SelectedItemsRecViewAdapter.ViewHolder> {
+public class SelectedItemsRecViewAdapter
+        extends RecyclerView.Adapter<SelectedItemsRecViewAdapter.ViewHolder> {
 
     private final OnItemClickListener onItemClickListener;
     private final List<ShoppingItem> selectedItems;
@@ -28,7 +29,8 @@ public class SelectedItemsRecViewAdapter extends RecyclerView.Adapter<SelectedIt
 
     @NonNull
     @Override
-    public SelectedItemsRecViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SelectedItemsRecViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
+                                                                     int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.rec_view_selected_item, parent, false);
 
@@ -36,7 +38,8 @@ public class SelectedItemsRecViewAdapter extends RecyclerView.Adapter<SelectedIt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SelectedItemsRecViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SelectedItemsRecViewAdapter.ViewHolder holder,
+                                 int position) {
         ShoppingItem shoppingItem = Objects.requireNonNull(selectedItems).get(position);
         holder.itemName.setText(shoppingItem.getName());
     }
@@ -58,9 +61,8 @@ public class SelectedItemsRecViewAdapter extends RecyclerView.Adapter<SelectedIt
             super(itemView);
             itemName = itemView.findViewById(R.id.selected_item_name);
 
-            itemView.setOnClickListener((View v) -> {
-                onSelectedItemClickListener.onItemClick(getAdapterPosition());
-            });
+            itemView.setOnClickListener((View v) ->
+                    onSelectedItemClickListener.onItemClick(getAdapterPosition()));
         }
 
 

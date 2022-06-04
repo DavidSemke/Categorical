@@ -11,7 +11,6 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.text.TextUtils;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -241,13 +240,12 @@ public class FileUtil {
             while ((read = inputStream.read(buffers)) != -1) {
                 outputStream.write(buffers, 0, read);
             }
-            Log.e("File Size", "Size " + file.length());
+
             inputStream.close();
             outputStream.close();
-            Log.e("File Path", "Path " + file.getPath());
-            Log.e("File Size", "Size " + file.length());
-        } catch (Exception e) {
-            Log.e("Exception", e.getMessage());
+
+        } catch (Exception ignored) {
+
         }
         finally {
             returnCursor.close();
@@ -296,9 +294,9 @@ public class FileUtil {
             outputStream.close();
 
         }
-        catch (Exception e) {
+        catch (Exception ignored) {
 
-            Log.e("Exception", e.getMessage());
+
         }
         finally {
             returnCursor.close();

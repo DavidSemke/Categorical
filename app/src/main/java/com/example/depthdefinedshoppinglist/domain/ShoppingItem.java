@@ -8,7 +8,7 @@ public class ShoppingItem implements Comparable<ShoppingItem> {
     public static final int MAX_NAME_LENGTH = 14;
 
     private ShoppingItem parentCategory;
-    private ArrayList<ShoppingItem> categoryItems = new ArrayList<>();
+    private final ArrayList<ShoppingItem> categoryItems = new ArrayList<>();
     private String name;
     private final int depth;
 
@@ -129,16 +129,8 @@ public class ShoppingItem implements Comparable<ShoppingItem> {
         return parentCategory;
     }
 
-    public void setParentCategory(ShoppingItem parentCategory) {
-        this.parentCategory = parentCategory;
-    }
-
     public ArrayList<ShoppingItem> getCategoryItems() {
         return categoryItems;
-    }
-
-    public void setCategoryItems(ArrayList<ShoppingItem> categoryItems) {
-        this.categoryItems = categoryItems;
     }
 
     public String getName() {

@@ -2,7 +2,6 @@ package com.example.depthdefinedshoppinglist.ui.recViewAdapter;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +18,10 @@ import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
 import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class CatalogRecViewAdapter extends RecyclerView.Adapter<CatalogRecViewAdapter.ViewHolder> {
-
-    public static final String DEL = "del";
-
     //measured in dp (density-independent pixels)
     public static final int indentationSize = 50;
 
@@ -121,7 +116,7 @@ public class CatalogRecViewAdapter extends RecyclerView.Adapter<CatalogRecViewAd
         int firstPosition = parentPosition + 1;
 
         //childCount should always be >=1 if this method is called
-        int childCount = 1;
+        int childCount;
         if (parent.equals(CatalogFragment.CAT_ROOT))
             childCount = mainViewModel.getCatItems().size();
         else
@@ -200,7 +195,7 @@ public class CatalogRecViewAdapter extends RecyclerView.Adapter<CatalogRecViewAd
             return fail;
 
         //parent initially cat root
-        ShoppingItem next = null;
+        ShoppingItem next;
         int currDepth;
         int position = 1;
         for (; position < displayedCatItems.size(); position++) {
