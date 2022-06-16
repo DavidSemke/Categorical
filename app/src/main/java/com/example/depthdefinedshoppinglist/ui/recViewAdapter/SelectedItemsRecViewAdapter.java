@@ -1,5 +1,6 @@
 package com.example.depthdefinedshoppinglist.ui.recViewAdapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.example.depthdefinedshoppinglist.R;
 import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
 import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -47,6 +49,21 @@ public class SelectedItemsRecViewAdapter
     @Override
     public int getItemCount() {
         return Objects.requireNonNull(selectedItems).size();
+    }
+
+    public ShoppingItem getItem(int position) {
+        return selectedItems.get(position);
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void clear() {
+        selectedItems.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(int start, ArrayList<ShoppingItem> itemList) {
+        selectedItems.addAll(itemList);
+        notifyItemRangeInserted(start, itemList.size());
     }
 
     public void remove(int itemIndex) {
