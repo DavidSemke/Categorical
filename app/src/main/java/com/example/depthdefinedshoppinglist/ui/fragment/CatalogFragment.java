@@ -131,7 +131,8 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                rawSelect(newCat, position);
+                                //the result of getPosition(newCat) is assumed to not be -1
+                                rawSelect(newCat, mainViewModel.getCatAdapter().getPosition(newCat));
 
                                 TextFileManager.unobservedWriteToFile(mainViewModel.getCatItems(),
                                         mainViewModel.getSelectedItems(), requireActivity());
@@ -191,7 +192,8 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                rawDelete(item, position);
+                                //the result of getPosition(newCat) is assumed to not be -1
+                                rawDelete(item, mainViewModel.getCatAdapter().getPosition(newCat));
 
                                 TextFileManager.unobservedWriteToFile(mainViewModel.getCatItems(),
                                         mainViewModel.getSelectedItems(), requireActivity());
@@ -303,6 +305,8 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                     //array to contain the to-be-siblings of the cat to be added
                     ArrayList<ShoppingItem> siblings = null;
                     ShoppingItem itemToAddTo = item;
+                    //position may be adjusted due to external update; this var allows editing of position
+                    int finalPosition = position;
 
                     if (TextFileManager.isExternalModify()) {
                         if (mainViewModel.updateLists(requireActivity())) {
@@ -323,6 +327,8 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                 }
 
                                 else {
+                                    finalPosition = mainViewModel.getCatAdapter()
+                                            .getPosition(itemToAddTo);
                                     siblings = itemToAddTo.getCategoryItems();
                                 }
                             }
@@ -356,11 +362,11 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             if (itemToAddTo.equals(CAT_ROOT))
                                 itemToAddTo = null;
                             else if (!itemToAddTo.equals(expandedCats[itemToAddTo.getDepth()])) {
-                                mainViewModel.collapseAndExpand(position);
+                                mainViewModel.collapseAndExpand(finalPosition);
                                 parentPos = mainViewModel.getCatAdapter().getPosition(itemToAddTo);
                             }
                             else
-                                parentPos = position;
+                                parentPos = finalPosition;
 
                             mainViewModel.addToCatalog(new ShoppingItem(itemToAddTo, newName),
                                     parentPos);
@@ -430,6 +436,8 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                     }
 
                     ArrayList<ShoppingItem> siblings = null;
+                    //position may be adjusted due to external update; this var allows editing of position
+                    int finalPosition = position;
 
                     if (TextFileManager.isExternalModify()) {
                         if (mainViewModel.updateLists(requireActivity())) {
@@ -445,6 +453,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
+                                finalPosition = mainViewModel.getCatAdapter().getPosition(newCat);
                                 siblings = rawEditSiblings(newCat.getParentCategory());
                             }
 
@@ -470,7 +479,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                 notADupName = false;
                         }
                         if (notADupName) {
-                            mainViewModel.editCatalog(position, newName);
+                            mainViewModel.editCatalog(finalPosition, newName);
 
                             //write to file
                             TextFileManager.unobservedWriteToFile(mainViewModel.getCatItems(),
