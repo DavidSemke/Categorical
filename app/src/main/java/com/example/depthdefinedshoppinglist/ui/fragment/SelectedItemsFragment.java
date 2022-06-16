@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,13 +14,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.depthdefinedshoppinglist.R;
+import com.example.depthdefinedshoppinglist.data.TextFileManager;
+import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
 import com.example.depthdefinedshoppinglist.ui.recViewAdapter.SelectedItemsRecViewAdapter;
 import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
 import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
 
+import java.util.ArrayList;
+
 public class SelectedItemsFragment extends Fragment implements OnItemClickListener {
 
-    private SelectedItemsRecViewAdapter selectedItemsRecViewAdapter;
+    private MainViewModel mainViewModel;
 
     @Override
     public View onCreateView(
@@ -33,7 +38,7 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MainViewModel mainViewModel =
+        mainViewModel =
                 new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
         TextView selectedItemsEmptyRecViewMsg =
@@ -45,14 +50,47 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
         RecyclerView recyclerView = view.findViewById(R.id.selected_items_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        selectedItemsRecViewAdapter =
-                new SelectedItemsRecViewAdapter(mainViewModel.getSelectedItems(),
-                this);
-        recyclerView.setAdapter(selectedItemsRecViewAdapter);
+
+        mainViewModel.setSelectedItemsAdapter(
+                new SelectedItemsRecViewAdapter(new ArrayList<>(),
+                this));
+        recyclerView.setAdapter(mainViewModel.getSelectedItemsAdapter());
+
+        mainViewModel.buildSelectedItemsView();
     }
 
     public void onItemClick(int position) {
-        selectedItemsRecViewAdapter.remove(position);
+        ShoppingItem item = mainViewModel.getSelectedItemsAdapter().getItem(position);
+
+        if (TextFileManager.isExternalModify()) {
+            if (mainViewModel.updateLists(requireActivity())) {
+
+                mainViewModel.buildSelectedItemsView();
+
+                int newPosition = mainViewModel.findIndexOfPersistingSelectedItem(item);
+                if (newPosition != -1) {
+
+                    mainViewModel.removeFromSelected(newPosition);
+                    TextFileManager.unobservedWriteToFile(mainViewModel.getCatItems(),
+                            mainViewModel.getSelectedItems(), requireActivity());
+                }
+
+                Toast.makeText(
+                        requireActivity(), R.string.external_cat_update_msg,
+                        Toast.LENGTH_SHORT).show();
+
+            } else {
+
+                Toast.makeText(
+                        requireActivity(), R.string.failed_refresh_msg,
+                        Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            mainViewModel.removeFromSelected(position);
+            TextFileManager.unobservedWriteToFile(mainViewModel.getCatItems(),
+                    mainViewModel.getSelectedItems(), requireActivity());
+        }
+
     }
 
 }
