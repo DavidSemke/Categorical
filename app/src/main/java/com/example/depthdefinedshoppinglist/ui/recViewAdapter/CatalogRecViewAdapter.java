@@ -176,7 +176,7 @@ public class CatalogRecViewAdapter extends RecyclerView.Adapter<CatalogRecViewAd
             expandSymbol = itemView.findViewById(R.id.cat_item_expand_symbol);
             collapseSymbol = itemView.findViewById(R.id.cat_item_collapse_symbol);
 
-            itemName.setOnClickListener((View v) ->
+            itemView.setOnClickListener((View v) ->
                     onCatItemClickListener.onItemClick(getAdapterPosition()));
         }
 
