@@ -49,4 +49,5 @@
     <string name="exceed_max_depth_msg">Cannot exceed max depth.</string>
     <string name="expandable_symbol_description">Expandable symbol</string>
     <string name="collapsable_symbol_description">Collapsable symbol</string>
+    <string name="category_name_contains_period">A category name cannot contain the \'.\' character.</string>
 </resources>
