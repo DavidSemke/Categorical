@@ -8,6 +8,7 @@ import com.example.depthdefinedshoppinglist.data.TextFileManager;
 import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
 import com.example.depthdefinedshoppinglist.ui.fragment.CatalogFragment;
 import com.example.depthdefinedshoppinglist.ui.recViewAdapter.CatalogRecViewAdapter;
+import com.example.depthdefinedshoppinglist.ui.recViewAdapter.SelectedItemsRecViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,7 @@ public class MainViewModel extends ViewModel {
     private final ShoppingItem[] expandedCats = new ShoppingItem[ShoppingItem.MAX_DEPTH+1];
 
     private CatalogRecViewAdapter catAdapter;
+    private SelectedItemsRecViewAdapter selectedItemsAdapter;
 
     //two fragment hosts; one for SelectedItemsFragment (default) and CatalogFragment, the other
     //for the ItemsParentFragment (default) and the SettingsFragment
@@ -315,7 +317,25 @@ public class MainViewModel extends ViewModel {
         }
 
         return false;
+    }
 
+    public void buildSelectedItemsView() {
+        selectedItemsAdapter.clear();
+        selectedItemsAdapter.addAll(0, selectedItems);
+    }
+
+    public void removeFromSelected(int position) {
+        selectedItems.remove(position);
+        selectedItemsAdapter.remove(position);
+    }
+
+    public int findIndexOfPersistingSelectedItem(ShoppingItem oldSelected) {
+        for (int i = 0; i < selectedItems.size(); i++) {
+            if (selectedItems.get(i).equals(oldSelected)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     // Getters and setters
@@ -366,6 +386,14 @@ public class MainViewModel extends ViewModel {
 
     public void setCatAdapter(CatalogRecViewAdapter catalogRecViewAdapter) {
         this.catAdapter = catalogRecViewAdapter;
+    }
+
+    public SelectedItemsRecViewAdapter getSelectedItemsAdapter() {
+        return selectedItemsAdapter;
+    }
+
+    public void setSelectedItemsAdapter(SelectedItemsRecViewAdapter selectedItemsAdapter) {
+        this.selectedItemsAdapter = selectedItemsAdapter;
     }
 
     public ShoppingItem[] getExpandedCats() {
