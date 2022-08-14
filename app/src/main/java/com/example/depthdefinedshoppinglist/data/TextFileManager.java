@@ -150,20 +150,27 @@ public class TextFileManager {
 
                 boolean hierarchyIncomplete = false;
                 boolean isSelectedItem = false;
-                if (line.contains("<")) {
+                if (line.indexOf("<") == 0 && line.indexOf(">") == line.length()-1) {
                     line = line.substring(1, line.length() - 1);
                     isSelectedItem = true;
                 }
+
+                // categories must not contain illegal char's
+                if (line.contains(">") || line.contains("<"))
+                    continue;
+
                 String cat;
                 if (line.contains(".")) {
                     hierarchyIncomplete = true;
-                    cat = line.substring(0, line.indexOf("."));
+                    cat = line.substring(0, line.indexOf(".")).trim();
                 } else
-                    cat = line;
+                    cat = line.trim();
 
-                //make sure all names conform to max length
-                if (cat.length() > ShoppingItem.MAX_NAME_LENGTH)
+                //make sure all names conform to max and min length
+                if (cat.length() > ShoppingItem.MAX_NAME_LENGTH
+                    || cat.length() == 0)
                     continue;
+
 
                 ShoppingItem item = null;
                 for (int i = 0; i < catList.size(); i++) {
@@ -189,15 +196,16 @@ public class TextFileManager {
                     children = parentCat.getCategoryItems();
 
                     if (!line.contains(".")) {
-                        cat = line;
+                        cat = line.trim();
                         hierarchyIncomplete = false;
                     } else {
-                        cat = line.substring(0, line.indexOf("."));
+                        cat = line.substring(0, line.indexOf(".")).trim();
                     }
 
-                    //make sure all names conform to max length
-                    if (cat.length() > ShoppingItem.MAX_NAME_LENGTH)
-                        break;
+                    //make sure all names conform to max and min length
+                    if (cat.length() > ShoppingItem.MAX_NAME_LENGTH
+                            || cat.length() == 0)
+                       break;
 
                     for (int i = 0; i < children.size(); i++) {
                         if (cat.equals(children.get(i).getName())) {

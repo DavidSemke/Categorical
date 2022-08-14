@@ -296,10 +296,10 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    else if (newName.contains(".")) {
+                    else if (newName.contains(".") || newName.contains("<") || newName.contains(">")) {
                         Toast.makeText(
-                                requireActivity(), R.string.category_name_contains_period,
-                                Toast.LENGTH_SHORT).show();
+                                requireActivity(), R.string.category_name_cannot_contain_special_character,
+                                Toast.LENGTH_LONG).show();
                         return;
                     }
                     //array to contain the to-be-siblings of the cat to be added
@@ -428,10 +428,10 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    else if (newName.contains(".")) {
+                    else if (newName.contains(".") || newName.contains("<") || newName.contains(">")) {
                         Toast.makeText(
-                                requireActivity(), R.string.category_name_contains_period,
-                                Toast.LENGTH_SHORT).show();
+                                requireActivity(), R.string.category_name_cannot_contain_special_character,
+                                Toast.LENGTH_LONG).show();
                         return;
                     }
 
