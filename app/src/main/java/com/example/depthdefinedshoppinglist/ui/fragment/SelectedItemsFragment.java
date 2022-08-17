@@ -41,8 +41,7 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
         mainViewModel =
                 new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        TextView selectedItemsEmptyRecViewMsg =
-                view.findViewById(R.id.selected_items_empty_rec_view_text);
+        TextView selectedItemsEmptyRecViewMsg = view.findViewById(R.id.selected_items_empty_rec_view_text);
 
         if (mainViewModel.getSelectedItems().isEmpty())
             selectedItemsEmptyRecViewMsg.setVisibility(View.VISIBLE);
@@ -92,5 +91,4 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
         }
 
     }
-
 }

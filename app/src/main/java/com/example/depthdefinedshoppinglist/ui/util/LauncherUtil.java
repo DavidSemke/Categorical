@@ -56,6 +56,7 @@ public class LauncherUtil {
 
                                 MainActivity mainActivity = (MainActivity) context;
                                 mainActivity.setUpCatalogTextFile();
+                                mainActivity.recreate();
 
                                 Toast.makeText(context.getApplicationContext(),
                                         R.string.toast_chosen_file_accepted,
@@ -68,6 +69,7 @@ public class LauncherUtil {
                         }
                     }
                 });
+
     }
 
     public static ActivityResultLauncher<Intent> createFileCreationLauncher

@@ -65,10 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         refreshIcon.setOnClickListener(v -> {
             if (TextFileManager.isExternalModify()) {
-
                 if (mainViewModel.updateLists(this)) {
-
-                    mainViewModel.buildCatalogView();
+                    refreshItemsFragment();
 
                     Toast.makeText(
                             this, R.string.refreshed_msg,
@@ -123,6 +121,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+    public void refreshItemsFragment() {
+        if (!mainViewModel.isSelectedItemsFragmentActive())
+            mainViewModel.buildCatalogView();
+        else
+            mainViewModel.buildSelectedItemsView();
     }
 
     @Override
