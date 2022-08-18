@@ -263,11 +263,19 @@ public class TextFileManager {
         observer.stopWatching();
         if (!writeToCatalogTextFile(catList,
                 selectedItemsList, context))
+
+            
+
             Toast.makeText(
                     context, R.string.failed_refresh_msg,
                     Toast.LENGTH_SHORT).show();
-        else
-            startObserving(new File(FileUtil.getPath(catFileUri, context)));
+
+
+        else {
+            File file = new File(FileUtil.getPath(catFileUri, context));
+            startObserving(file);
+        }
+
 
     }
 
