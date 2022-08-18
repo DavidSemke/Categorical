@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     TextFileManager.setCatFileUri(catFileUri);
                     //observe file; if modified, then on the next add, del, edit, or manual refresh,
                     //display will be updated
-                    TextFileManager.startObserving(path);
+                    TextFileManager.startObserving(file);
 
                     mainViewModel.updateLists(this);
                 }

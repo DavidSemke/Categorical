@@ -46,13 +46,9 @@ public class LauncherUtil {
                                 editor.putString(uriKey, stringUri);
                                 editor.apply();
 
-
                                 context.getContentResolver()
                                         .takePersistableUriPermission(uri,
                                                 takeFlags);
-
-                                TextFileManager.setCatFileUri(uri);
-                                TextFileManager.startObserving(path);
 
                                 MainActivity mainActivity = (MainActivity) context;
                                 mainActivity.setUpCatalogTextFile();

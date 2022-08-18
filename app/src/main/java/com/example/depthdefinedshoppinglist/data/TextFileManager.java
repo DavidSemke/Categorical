@@ -266,15 +266,17 @@ public class TextFileManager {
             Toast.makeText(
                     context, R.string.failed_refresh_msg,
                     Toast.LENGTH_SHORT).show();
-        startObserving(FileUtil.getPath(catFileUri, context));
+        else
+            startObserving(new File(FileUtil.getPath(catFileUri, context)));
+
     }
 
     /**
      * Initialize a FileObserver object tied to a text file, and start observing it.
-     * @param filePath - path of text file to be observed for modifications; assumed to be non-null.
+     * @param file - text file to be observed for modifications; assumed to be non-null.
      */
-    public static void startObserving(String filePath) {
-        observer = new FileObserver(filePath) {
+    public static void startObserving(File file) {
+        observer = new FileObserver(file) {
             @Override
             public void onEvent(int event, @Nullable String path) {
                 if (event == CLOSE_WRITE) {
