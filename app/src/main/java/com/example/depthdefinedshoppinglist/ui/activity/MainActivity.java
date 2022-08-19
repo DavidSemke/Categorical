@@ -69,18 +69,18 @@ public class MainActivity extends AppCompatActivity {
                     refreshItemsFragment();
 
                     Toast.makeText(
-                            this, R.string.refreshed_msg,
+                            this, R.string.toast_refresh,
                             Toast.LENGTH_SHORT).show();
 
                 } else {
                     Toast.makeText(
-                            this, R.string.failed_refresh_msg,
+                            this, R.string.toast_failed_refresh,
                             Toast.LENGTH_SHORT).show();
                 }
             }
             else {
                 Toast.makeText(
-                        this, R.string.refreshed_msg,
+                        this, R.string.toast_refresh,
                         Toast.LENGTH_SHORT).show();
             }
         });

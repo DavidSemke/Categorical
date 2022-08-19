@@ -267,7 +267,7 @@ public class TextFileManager {
             
 
             Toast.makeText(
-                    context, R.string.failed_refresh_msg,
+                    context, R.string.toast_failed_refresh,
                     Toast.LENGTH_SHORT).show();
 
 

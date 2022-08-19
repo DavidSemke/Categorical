@@ -6,7 +6,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/recyclerview_selected_item"
-        style="@style/material_card_view_style">
+        style="@style/cardView">
 
         <LinearLayout
             android:layout_width="match_parent"

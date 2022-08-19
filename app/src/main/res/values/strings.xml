@@ -1,53 +1,65 @@
 <resources>
+    <!-- Headers -->
     <string name="app_name">Shopping List</string>
-    <string name="action_settings">Settings</string>
+    <string name="settings_file_management_header"><b>File Management</b></string>
 
+
+    <!-- Buttons -->
     <string name="selected_items_tab_name">MY LIST</string>
     <string name="catalog_tab_name">CATALOG</string>
-    <string name="ok_button_text">OK</string>
-    <string name="cancel_button_text">@android:string/cancel</string>
-    <string name="select_data_destination_dialog_title">Select Data Destination</string>
-    <string name="select_data_destination_dialog_description">Select a destination for the app\'s
-        data:</string>
-    <string name="add_cat_dialog_title">Add Category</string>
-    <string name="add_cat_dialog_description">Enter a name for the new child of parent
-        \"%1$s\"</string>
-    <string name="edit_cat_dialog_title">Edit Category</string>
-    <string name="edit_cat_dialog_description">Enter a new name for category \"%1$s\"</string>
-    <string name="selected_items_empty_rec_view_msg">There is nothing here! Go to the catalog to add
-        items to your list.</string>
-    <string name="catalog_empty_rec_view_msg">There is nothing here! Select the \"Add\" option at
-        the bottom of the screen, and then select the \"CATALOG ROOT\" item to add an item.</string>
     <string name="skip_button_text">SKIP</string>
     <string name="create_button_text">CREATE</string>
     <string name="select_button_text">SELECT</string>
+    <string name="ok_button_text">OK</string>
+    <string name="cancel_button_text">@android:string/cancel</string>
+
+    <!-- Dialogs -->
+    <string name="select_data_destination_dialog_title">Select Data Destination</string>
+    <string name="select_data_destination_dialog_description">Select a destination for the app\'s
+        data.</string>
+    <string name="add_cat_dialog_title">Add Category</string>
+    <string name="add_cat_dialog_description">Enter a name for the new child of parent category
+        \"%1$s\".</string>
+    <string name="edit_cat_dialog_title">Edit Category</string>
+    <string name="edit_cat_dialog_description">Enter a new name for category \"%1$s\".</string>
     <string name="create_text_file_dialog_title">Create a Text File</string>
     <string name="create_text_file_dialog_msg">Create a text file to store the app\'s persistent
         data.</string>
     <string name="select_text_file_dialog_title">Select a Text File</string>
     <string name="select_text_file_dialog_msg">Select a text file to store the app\'s persistent
         data.</string>
+
+    <!-- Toast messages -->
     <string name="toast_successful_file_creation">File created.</string>
     <string name="toast_failed_file_creation">Failed to create file.</string>
     <string name="toast_chosen_file_accepted">File accepted.</string>
     <string name="toast_chosen_file_rejected">Failed to accept file.</string>
-    <string name="duplicate_msg">Duplicate category name.</string>
-    <string name="failed_delete_msg">Delete failed.</string>
-    <string name="failed_refresh_msg">Refresh failed. File unavailable.</string>
-    <string name="failed_edit_msg">Edit failed.</string>
-    <string name="failed_add_msg">Add failed.</string>
-    <string name="on_cat_delete_msg">Category deleted.</string>
-    <string name="field_empty">Field cannot be empty.</string>
-    <string name="failed_select_msg">Select failed.</string>
+    <string name="toast_duplicate_cat">Duplicate category name.</string>
+    <string name="toast_failed_delete">Delete failed.</string>
+    <string name="toast_failed_refresh">Refresh failed. File unavailable.</string>
+    <string name="toast_failed_edit">Edit failed.</string>
+    <string name="toast_failed_add">Add failed.</string>
+    <string name="toast_field_empty">Field cannot be empty.</string>
+    <string name="toast_failed_select">Select failed.</string>
+    <string name="toast_refresh">Refreshed.</string>
+    <string name="toast_external_cat_update">External catalog update.</string>
+    <string name="toast_max_depth_exceeded">Cannot exceed max depth.</string>
+    <string name="toast_name_cannot_contain_special_characters">A category name cannot contain characters \'.\', \'&lt;\', or \'&gt;\'.</string>
+
+    <!-- Hints -->
+    <string name="selected_items_empty_rec_view_msg">There is nothing here! Go to the catalog to add
+        items to your list.</string>
+    <string name="catalog_empty_rec_view_msg">There is nothing here! Select the \"Add\" option at
+        the bottom of the screen, and then select the \"CATALOG ROOT\" item to add an item.</string>
+
+    <!-- Other -->
+    <string name="settings_file_management_select_file_text">Select a text file to store your data.
+    </string>
     <string name="checkmark">Checkmark</string>
-    <string name="file_management_header"><b>File Management</b></string>
-    <string name="settings_file_management_select_file_text">Select Text File to Store Item Categories.</string>
     <string name="refresh">Refresh</string>
     <string name="settings">Settings</string>
-    <string name="refreshed_msg">Refreshed.</string>
-    <string name="external_cat_update_msg">External catalog update.</string>
-    <string name="exceed_max_depth_msg">Cannot exceed max depth.</string>
     <string name="expandable_symbol_description">Expandable symbol</string>
     <string name="collapsable_symbol_description">Collapsable symbol</string>
-    <string name="category_name_cannot_contain_special_character">A category name cannot contain characters \'.\', \'&lt;\', or \'&gt;\'.</string>
+
+
 </resources>

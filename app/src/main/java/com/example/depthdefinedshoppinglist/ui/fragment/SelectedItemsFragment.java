@@ -75,13 +75,13 @@ public class SelectedItemsFragment extends Fragment implements OnItemClickListen
                 }
 
                 Toast.makeText(
-                        requireActivity(), R.string.external_cat_update_msg,
+                        requireActivity(), R.string.toast_external_cat_update,
                         Toast.LENGTH_SHORT).show();
 
             } else {
 
                 Toast.makeText(
-                        requireActivity(), R.string.failed_refresh_msg,
+                        requireActivity(), R.string.toast_failed_refresh,
                         Toast.LENGTH_SHORT).show();
             }
         } else {

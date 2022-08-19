@@ -127,7 +127,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             if (newCat == null) {
 
                                 Toast.makeText(
-                                        requireActivity(), R.string.failed_select_msg,
+                                        requireActivity(), R.string.toast_failed_select,
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
@@ -139,14 +139,14 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             }
 
                             Toast.makeText(
-                                    requireActivity(), R.string.external_cat_update_msg,
+                                    requireActivity(), R.string.toast_external_cat_update,
                                     Toast.LENGTH_SHORT).show();
 
                         } else {
                             rawSelect(item, position);
 
                             Toast.makeText(
-                                    requireActivity(), R.string.failed_refresh_msg,
+                                    requireActivity(), R.string.toast_failed_refresh,
                                     Toast.LENGTH_SHORT).show();
                         }
                     } else {
@@ -162,7 +162,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
             case ADD:
                 if (item.getDepth() + 1 > ShoppingItem.MAX_DEPTH)
                     Toast.makeText(
-                            requireActivity(), R.string.exceed_max_depth_msg,
+                            requireActivity(), R.string.toast_max_depth_exceeded,
                             Toast.LENGTH_SHORT).show();
                 else {
                     //item to be added to becomes expanded if (add successful and not already
@@ -188,7 +188,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             ShoppingItem newCat = mainViewModel.findPersistingCat(item);
                             if (newCat == null) {
                                 Toast.makeText(
-                                        requireActivity(), R.string.failed_delete_msg,
+                                        requireActivity(), R.string.toast_failed_delete,
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
@@ -199,14 +199,14 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                         mainViewModel.getSelectedItems(), requireActivity());
                             }
                             Toast.makeText(
-                                    requireActivity(), R.string.external_cat_update_msg,
+                                    requireActivity(), R.string.toast_external_cat_update,
                                     Toast.LENGTH_SHORT).show();
                         }
                         else {
                             rawDelete(item, position);
 
                             Toast.makeText(
-                                    requireActivity(), R.string.failed_refresh_msg,
+                                    requireActivity(), R.string.toast_failed_refresh,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -266,9 +266,6 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
 
         }
         mainViewModel.deleteFromCatalog(position);
-
-        Toast.makeText(
-                requireActivity(), R.string.on_cat_delete_msg, Toast.LENGTH_SHORT).show();
     }
 
     private void createAddCategoryDialog(int position, ShoppingItem item) {
@@ -292,13 +289,13 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                     String newName = input.getText().toString().trim();
                     if (newName.isEmpty()) {
                         Toast.makeText(
-                                requireActivity(), R.string.field_empty,
+                                requireActivity(), R.string.toast_field_empty,
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
                     else if (newName.contains(".") || newName.contains("<") || newName.contains(">")) {
                         Toast.makeText(
-                                requireActivity(), R.string.category_name_cannot_contain_special_character,
+                                requireActivity(), R.string.toast_name_cannot_contain_special_characters,
                                 Toast.LENGTH_LONG).show();
                         return;
                     }
@@ -322,7 +319,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
 
                                 if (itemToAddTo == null) {
                                     Toast.makeText(
-                                            requireActivity(), R.string.failed_add_msg,
+                                            requireActivity(), R.string.toast_failed_add,
                                             Toast.LENGTH_SHORT).show();
                                 }
 
@@ -334,14 +331,14 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             }
 
                             Toast.makeText(
-                                    requireActivity(), R.string.external_cat_update_msg,
+                                    requireActivity(), R.string.toast_external_cat_update,
                                     Toast.LENGTH_SHORT).show();
                         }
                         else {
                             siblings = rawAddSiblings(itemToAddTo);
 
                             Toast.makeText(
-                                    requireActivity(), R.string.failed_refresh_msg,
+                                    requireActivity(), R.string.toast_failed_refresh,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -378,7 +375,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                     mainViewModel.getSelectedItems(), requireActivity());
                         }
                         else {
-                            Toast.makeText(requireActivity(), R.string.duplicate_msg,
+                            Toast.makeText(requireActivity(), R.string.toast_duplicate_cat,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -424,13 +421,13 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                     String newName = input.getText().toString().trim();
                     if (newName.isEmpty()) {
                         Toast.makeText(
-                                requireActivity(), R.string.field_empty,
+                                requireActivity(), R.string.toast_field_empty,
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
                     else if (newName.contains(".") || newName.contains("<") || newName.contains(">")) {
                         Toast.makeText(
-                                requireActivity(), R.string.category_name_cannot_contain_special_character,
+                                requireActivity(), R.string.toast_name_cannot_contain_special_characters,
                                 Toast.LENGTH_LONG).show();
                         return;
                     }
@@ -449,7 +446,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
 
                             if (newCat == null) {
                                 Toast.makeText(
-                                        requireActivity(), R.string.failed_edit_msg,
+                                        requireActivity(), R.string.toast_failed_edit,
                                         Toast.LENGTH_SHORT).show();
                             }
                             else {
@@ -458,14 +455,14 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                             }
 
                             Toast.makeText(
-                                    requireActivity(), R.string.external_cat_update_msg,
+                                    requireActivity(), R.string.toast_external_cat_update,
                                     Toast.LENGTH_SHORT).show();
                         }
                         else {
 
                             siblings = rawEditSiblings(item.getParentCategory());
                             Toast.makeText(
-                                    requireActivity(), R.string.failed_refresh_msg,
+                                    requireActivity(), R.string.toast_failed_refresh,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -486,7 +483,7 @@ public class CatalogFragment extends Fragment implements OnItemClickListener {
                                     mainViewModel.getSelectedItems(), requireActivity());
                         }
                         else {
-                            Toast.makeText(requireActivity(), R.string.duplicate_msg,
+                            Toast.makeText(requireActivity(), R.string.toast_duplicate_cat,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
