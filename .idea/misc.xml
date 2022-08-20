@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/drawable/ic_launcher_background.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/drawable/launcher_icon_background.xml" value="0.254" />
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/layout/catalog_fragment.xml" value="0.1" />
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/layout/items_parent_fragment.xml" value="0.1" />
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/layout/main_activity.xml" value="0.1" />
@@ -12,6 +16,10 @@
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/layout/settings_fragment.xml" value="0.1" />
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/menu/bottom_nav_bar.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/mipmap-anydpi-v26/launcher_icon.xml" value="0.254" />
+        <entry key="..\:/Users/David/Programming/SoftwareDevelopment/Workspaces/AndroidStudioProjects/Categorical/app/src/main/res/mipmap-anydpi-v26/launcher_icon_round.xml" value="0.254" />
       </map>
     </option>
   </component>
