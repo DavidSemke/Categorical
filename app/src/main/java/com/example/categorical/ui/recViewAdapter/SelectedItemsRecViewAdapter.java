@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.recViewAdapter;
+package com.example.categorical.ui.recViewAdapter;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
-import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
+import com.example.categorical.R;
+import com.example.categorical.domain.ShoppingItem;
+import com.example.categorical.ui.util.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

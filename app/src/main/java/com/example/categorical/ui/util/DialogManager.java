@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.util;
+package com.example.categorical.ui.util;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.content.Intent;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.depthdefinedshoppinglist.R;
+import com.example.categorical.R;
 
 public class DialogManager {
 

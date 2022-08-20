@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/itemsParentFragment"
-        android:name="com.example.depthdefinedshoppinglist.ui.fragment.ItemsParentFragment"
+        android:name="com.example.categorical.ui.fragment.ItemsParentFragment"
         android:label="ItemsParentFragment" >
         <action
             android:id="@+id/action_itemsParentFragment_to_settingsFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.depthdefinedshoppinglist.ui.fragment.SettingsFragment"
+        android:name="com.example.categorical.ui.fragment.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

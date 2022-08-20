@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/selected_items"
-        android:name="com.example.depthdefinedshoppinglist.ui.fragment.SelectedItemsFragment"
+        android:name="com.example.categorical.ui.fragment.SelectedItemsFragment"
         android:label="selected_items_label"
         tools:layout="@layout/selected_items_fragment">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/catalog"
-        android:name="com.example.depthdefinedshoppinglist.ui.fragment.CatalogFragment"
+        android:name="com.example.categorical.ui.fragment.CatalogFragment"
         android:label="catalog_label"
         tools:layout="@layout/catalog_fragment">
 

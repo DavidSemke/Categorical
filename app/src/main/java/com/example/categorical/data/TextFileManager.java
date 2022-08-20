@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.data;
+package com.example.categorical.data;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
+import com.example.categorical.R;
+import com.example.categorical.domain.ShoppingItem;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

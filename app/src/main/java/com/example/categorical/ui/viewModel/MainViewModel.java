@@ -1,14 +1,14 @@
-package com.example.depthdefinedshoppinglist.ui.viewModel;
+package com.example.categorical.ui.viewModel;
 
 import android.content.Context;
 
 import androidx.lifecycle.ViewModel;
 
-import com.example.depthdefinedshoppinglist.data.TextFileManager;
-import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
-import com.example.depthdefinedshoppinglist.ui.fragment.CatalogFragment;
-import com.example.depthdefinedshoppinglist.ui.recViewAdapter.CatalogRecViewAdapter;
-import com.example.depthdefinedshoppinglist.ui.recViewAdapter.SelectedItemsRecViewAdapter;
+import com.example.categorical.data.TextFileManager;
+import com.example.categorical.domain.ShoppingItem;
+import com.example.categorical.ui.fragment.CatalogFragment;
+import com.example.categorical.ui.recViewAdapter.CatalogRecViewAdapter;
+import com.example.categorical.ui.recViewAdapter.SelectedItemsRecViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

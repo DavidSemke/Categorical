@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist;
+package com.example.categorical;
 
 import android.content.Context;
 

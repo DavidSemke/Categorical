@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.fragment;
+package com.example.categorical.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,8 +12,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
+import com.example.categorical.R;
+import com.example.categorical.ui.viewModel.MainViewModel;
 
 public class ItemsParentFragment extends Fragment {
 

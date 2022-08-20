@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.activity;
+package com.example.categorical.ui.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,12 +14,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.data.FileUtil;
-import com.example.depthdefinedshoppinglist.data.TextFileManager;
-import com.example.depthdefinedshoppinglist.ui.util.DialogManager;
-import com.example.depthdefinedshoppinglist.ui.util.LauncherUtil;
-import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
+import com.example.categorical.R;
+import com.example.categorical.data.FileUtil;
+import com.example.categorical.data.TextFileManager;
+import com.example.categorical.ui.util.DialogManager;
+import com.example.categorical.ui.util.LauncherUtil;
+import com.example.categorical.ui.viewModel.MainViewModel;
 
 import java.io.File;
 

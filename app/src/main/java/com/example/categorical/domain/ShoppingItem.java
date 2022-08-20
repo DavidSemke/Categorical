@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.domain;
+package com.example.categorical.domain;
 
 import java.util.ArrayList;
 import java.util.Stack;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.SelectedItemsFragment"
+    tools:context="com.example.categorical.ui.fragment.SelectedItemsFragment"
     android:id="@+id/selected_items_fragment">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.fragment;
+package com.example.categorical.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,12 +13,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.data.TextFileManager;
-import com.example.depthdefinedshoppinglist.domain.ShoppingItem;
-import com.example.depthdefinedshoppinglist.ui.recViewAdapter.SelectedItemsRecViewAdapter;
-import com.example.depthdefinedshoppinglist.ui.util.OnItemClickListener;
-import com.example.depthdefinedshoppinglist.ui.viewModel.MainViewModel;
+import com.example.categorical.R;
+import com.example.categorical.data.TextFileManager;
+import com.example.categorical.domain.ShoppingItem;
+import com.example.categorical.ui.recViewAdapter.SelectedItemsRecViewAdapter;
+import com.example.categorical.ui.util.OnItemClickListener;
+import com.example.categorical.ui.viewModel.MainViewModel;
 
 import java.util.ArrayList;
 

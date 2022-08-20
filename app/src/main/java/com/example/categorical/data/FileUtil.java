@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.data;
+package com.example.categorical.data;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;

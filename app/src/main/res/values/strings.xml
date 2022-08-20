@@ -1,6 +1,6 @@
 <resources>
     <!-- Headers -->
-    <string name="app_name">Shopping List</string>
+    <string name="app_name">Categorical</string>
     <string name="settings_file_management_header"><b>File Management</b></string>
 
 
@@ -60,6 +60,10 @@
     <string name="settings">Settings</string>
     <string name="expandable_symbol_description">Expandable symbol</string>
     <string name="collapsable_symbol_description">Collapsable symbol</string>
+    <string name="select">Select</string>
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
 
 </resources>

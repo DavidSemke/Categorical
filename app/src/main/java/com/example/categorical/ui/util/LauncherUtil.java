@@ -1,4 +1,4 @@
-package com.example.depthdefinedshoppinglist.ui.util;
+package com.example.categorical.ui.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,10 +11,9 @@ import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 
-import com.example.depthdefinedshoppinglist.R;
-import com.example.depthdefinedshoppinglist.data.FileUtil;
-import com.example.depthdefinedshoppinglist.data.TextFileManager;
-import com.example.depthdefinedshoppinglist.ui.activity.MainActivity;
+import com.example.categorical.R;
+import com.example.categorical.data.FileUtil;
+import com.example.categorical.ui.activity.MainActivity;
 
 public class LauncherUtil {
 

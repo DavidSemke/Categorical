@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.depthdefinedshoppinglist">
+    package="com.example.categorical">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/launcher_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ShoppingList">
+        android:theme="@style/Theme.Categorical">
         <activity
-            android:name=".ui.activity.MainActivity"
-            android:theme="@style/Theme.ShoppingList.NoActionBar"
+            android:name="com.example.categorical.ui.activity.MainActivity"
+            android:theme="@style/Theme.Categorical.NoActionBar"
             android:exported="true">
 
             <intent-filter>
