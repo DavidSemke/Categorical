@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Card View -->
     <style name="cardView" parent="@style/Widget.MaterialComponents.CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
@@ -13,10 +14,15 @@
         <item name="strokeWidth">2dp</item>
     </style>
 
+    <!-- Toolbar -->
     <style name="toolbar">
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:background">@color/dark_violet</item>
+    </style>
+
+    <style name="titleText">
+        <item name="android:textSize">@dimen/header1</item>
     </style>
 
     <!-- Alert Dialog Style -->
@@ -32,5 +38,11 @@
     <style name="positiveButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/purple</item>
     </style>
+
+    <!-- Bottom Nav Bar -->
+    <style name="bottomNavView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/pale_blue</item>
+    </style>
+
 
 </resources>

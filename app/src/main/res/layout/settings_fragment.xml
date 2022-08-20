@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings_file_management_header"
-        android:textSize="@dimen/header2"/>
+        android:textSize="@dimen/header1"/>
 
     <View
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings_file_management_select_file_text"
-            android:textSize="@dimen/header3"/>
+            android:textSize="@dimen/header2"/>
 
 
     </LinearLayout>

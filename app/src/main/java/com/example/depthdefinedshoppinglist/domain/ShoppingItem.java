@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class ShoppingItem implements Comparable<ShoppingItem> {
     public static final int MAX_DEPTH = 1;
-    public static final int MAX_NAME_LENGTH = 14;
+    public static final int MAX_NAME_LENGTH = 28;
 
     private ShoppingItem parentCategory;
     private final ArrayList<ShoppingItem> categoryItems = new ArrayList<>();

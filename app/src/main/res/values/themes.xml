@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <item name="android:textColor">@color/dark_gray</item>
+        <item name="bottomNavigationStyle">@style/bottomNavView</item>
 
     </style>
 
