@@ -1,5 +1,5 @@
 # Categorical
-## An Android app for creating lists from catalogs
+## An Android App for Creating Lists From Catalogs
 
 Categorical is a list-making app where users can create, delete, edit, and organize catalog items, 
 which can be added to their list.
